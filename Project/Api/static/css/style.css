@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menu de Seleccion */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    height: 85px;
+    background: #f6f6f6;
+}
+
+
+.logo-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+
+.logotipo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-image: url('../src/Logo/LogoPrincipal.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+.logotipo:hover {
+    filter: drop-shadow(0px 0px 15px #06323e);
+}
+
+.punto-varita {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #06323e;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    top: 14px;
+    right: 6.5px;
+    pointer-events: none;
+}
+
+.logo-container:hover .punto-varita {
+    opacity: 1;
+    filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 50px #06323e);
+}
+
+.menu {
+    line-height: 80px;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #02121c;
+    font-size: 18px;
+    margin-left: 20px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #06323e 0%, #0072ff 100%);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: #0072ff;
+}
+
+/* Intermedio Gif */
+.intermedio {
+    height: 80vh;
+    background-image: url('../src/Intermedio/Intermedio.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Footer  */
+.pie {
+    background-color: #f6f6f6;
+    color: #02121c;
+    padding: 40px 5% 20px 10%;
+}
+
+.contenedorfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+
+.contenido_footer,
+.enlaces,
+.logos {
+    flex: 1;
+}
+
+
+.titulo-footer,
+h3 {
+    color: #f0ad4e;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.enlaces a {
+    display: block;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.enlaces a:hover {
+    color: #02121c;
+}
+
+
+.iconos-redes img {
+    width: 50px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.iconos-redes img:hover {
+    filter: grayscale(0%);
+}
+
+
+.copyright {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+
+/* Cuerpo */
+.cuerpo {
+    padding: 20px;
+}
+
+/* Información */
+.seccion_info {
+    display: flex;
+    justify-content: space-between;
+    width: 1120px;
+    height: 500px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedorcuerpo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.contenedorcuerpo h1 {
+    color: #740001;
+    font-size: 35px;
+    margin-bottom: 10px;
+    animation: texto 15s ease-in-out infinite;
+    ;
+}
+
+.contenedorcuerpo p {
+    color: #02121c;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.indumentaria {
+    position: relative;
+    height: 380px;
+    width: 400px;
+    border-radius: 20px;
+    background-image: url('../src/Productos/Prod1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.indumentaria::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../src/Productos/Gryffindor.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: suavizarRopa 15s ease-in-out infinite alternate;
+}
+
+@keyframes suavizarRopa {
+    0% {
+        background-image: url('../src/Productos/Gryffindor.png');
+    }
+
+    25% {
+        background-image: url('../src/Productos/Hufflepuff.png');
+    }
+
+    50% {
+        background-image: url('../src/Productos/Slytherin.png');
+    }
+
+    75% {
+        background-image: url('../src/Productos/Ravenclaw.png');
+    }
+
+    100% {
+        background-image: url('../src/Productos/Gryffindor.png');
+    }
+}
+
+@keyframes texto {
+    0% {
+        color: #740001;
+    }
+
+    25% {
+        color: #FFD800;
+    }
+
+    50% {
+        color: #1A472A;
+    }
+
+    75% {
+        color: #0E1A40;
+    }
+
+    100% {
+        color: #740001;
+    }
+}
+
+/* Tarjetas  */
+.tarjetas_index {
+    display: flex;
+    justify-content: center;
+    grid-gap: 50px;
+    margin: 25px 0px;
+}
+
+/* FLIP CARD */
+.tarjeta_volteo {
+    width: 250px;
+    height: 459PX;
+    perspective: 2000px;
+}
+
+.tarjeta_volteo-front img {
+    width: 250px;
+    height: 459PX;
+    border-radius: 20px;
+}
+
+
+.tarjeta_volteo-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
+    transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+    transform-style: preserve-3d;
+}
+
+.tarjeta_volteo-front,
+.tarjeta_volteo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    backface-visibility: hidden;
+}
+
+.tarjeta_volteo-front {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tarjeta_volteo-back {
+    font-size: 1.25rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding: 5px;
+    background-color: #343434;
+    transform: rotateY(180deg);
+    color: #EEEEEE;
+}
+
+.tarjeta_volteo:hover .tarjeta_volteo-interno {
+    transform: rotateY(-180deg);
+}
+
+
+/* Intermedio Nuevo Producto */
+.nuevoproducto {
+    height: 80vh;
+    background-image: url('../src/Intermedio/NuevoProducto.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Nuevos Productos */
+.contenedor_Formulario {
+    display: flex;
+    justify-content: space-between;
+    width: 950px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px #343434;
+    margin: 25px auto;
+}
+
+.contenedor_Formulario img {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.contenedor_Formulario form {
+    padding: 50px;
+    width: 80%;
+}
+
+.contenedor_Formulario form input {
+    width: 98%;
+    height: 25px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.contenedor_Formulario form textarea {
+    width: 98%;
+    height: 50px;
+    padding: 15px 25px;
+    border-radius: 15px;
+}
+
+
+.contenedor_Formulario form h1 {
+    color: #0E1A40;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    margin: 15px 0px;
+}
+
+.btnr {
+    height: 45px !important;
+    border: none;
+    border-radius: 8px;
+    background-color: #0E1A40;
+    color: #FFFFFF;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 5px;
+    margin: 10px 0px !important;
+}
+
+.btnr:hover {
+    background: linear-gradient(to top, #02121c 0%, #0072ff 100%);
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0, 114, 255, 0.4); 
+}
+
+.btnr:active {
+    transform: translateY(0); 
+}
+
+#Alerta {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    min-width: 350px;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px #2d2d2d;
+}
+
+
+.verproductosint {
+    height: 80vh;
+    background-image: url('../src/Intermedio/VerProductos.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Ver Productos */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1e1e2f;
+    color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    color: #00d4ff;
+}
+
+.descripcion {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.fecha {
+    font-size: 12px;
+    color: #aaa;
+}

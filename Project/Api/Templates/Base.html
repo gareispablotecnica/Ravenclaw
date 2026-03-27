@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Cargamos la carpeta de archivos estáticos -->
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <!-- Anexamos la Hoja de Estilos -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo-container">
+            <div class="logotipo"></div>
+            <div class="punto-varita"></div>
+        </div>
+        <nav class="menu">
+            <a href="{% url 'Productos' %}">Ver Productos</a>
+            <a href="{% url 'nuevo_producto' %}">Agregar Produtos</a>
+            <a href="">Contactos</a>
+        </nav>
+    </header>
+    {% block Intermedio %}
+    <section class="intermedio"></section>
+    {% endblock %}
+
+    <main class="cuerpo">
+        {% block cuerpo %}
+        <section class="seccion_info">
+            <div class="indumentaria">
+            </div>
+            <div class="contenedorcuerpo">
+                <h1>Hogwarts </h1>
+                <p>El Colegio Hogwarts de Magia y Hechicería es un internado mágico ubicado en Escocia. El castillo se
+                    ubica en unas montañas cercanas a un lago. La localización exacta no ha sido descubierta ya que está
+                    escondida por los más poderosos encantamientos posibles. Sin embargo, de acuerdo con Hermione
+                    Granger, no está muy lejos de Dufftown. Los encantamientos que protegen al castillo son clasificados
+                    como encantamientos anti-aparición y encantos repelentes de Muggles (como el repello muggletum), que
+                    lo hacen que ellos vean unas ruinas antiguas con un letrero que dice "Peligro, prohibido el paso" en
+                    lugar del castillo. Estos encantamientos pueden ser levantados por el Director. La mayoría de los
+                    dispositivos electrónicos no funcionan en los terrenos de Hogwarts. En un momento dado, Hogwarts
+                    llegó a tener 1000 estudiantes.
+                </p>
+        </section>
+
+        <div class="tarjetas_index">
+            <div class="tarjeta_volteo">
+                <div class="tarjeta_volteo-interno">
+                    <div class="tarjeta_volteo-front">
+                        <img src="{% static 'src/Tarjeta/Gryffindor.jpg' %}" alt="">
+                    </div>
+                    <div class="tarjeta_volteo-back">
+                        Gryffindor es una de las cuatro casas del Colegio Hogwarts de Magia y Hechicería, fundada por
+                        Godric Gryffindor. Su animal emblemático es el león y sus colores son el rojo escarlata y el
+                        dorado. Minerva McGonagall es la más reciente jefa de la casa.
+                    </div>
+                </div>
+            </div>
+            <div class="tarjeta_volteo">
+                <div class="tarjeta_volteo-interno">
+                    <div class="tarjeta_volteo-front">
+                        <img src="{% static 'src/Tarjeta/Hufflepuff.jpg' %}" alt="">
+                    </div>
+                    <div class="tarjeta_volteo-back">
+                        Hufflepuffes una de las cuatro casas del Colegio Hogwarts de Magia y
+                        Hechicería. Su fundadora es la bruja medieval Helga Hufflepuff. La jefa de la casa es Pomona
+                        Sprout.El fraile gordo es el fantasma de la casa
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta_volteo">
+                <div class="tarjeta_volteo-interno">
+                    <div class="tarjeta_volteo-front">
+                        <img src="{% static 'src/Tarjeta/Ravenclaw.jpg' %}" alt="">
+                    </div>
+                    <div class="tarjeta_volteo-back">
+                        Ravenclawes una de las cuatro casas que componen el Colegio Hogwarts de Magia
+                        y Hechicería, fundada por Rowena Ravenclaw, quién tuvo una hija, cuyo fantasma es la Dama
+                        Gris la cual fue asesinada por el Barón Sanguinario.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta_volteo">
+                <div class="tarjeta_volteo-interno">
+                    <div class="tarjeta_volteo-front">
+                        <img src="{% static 'src/Tarjeta/Slytherin.jpg' %}" alt="">
+                    </div>
+                    <div class="tarjeta_volteo-back">
+                        Slytherin es una de las cuatro casas del Colegio Hogwarts de Magia
+                        y Hechicería, fundada por Salazar Slytherin. Al establecer la casa, Salazar instruyó al Sombrero
+                        Seleccionador para que seleccionara a los estudiantes que tenían las características
+                        particulares que él valoraba más
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer class="pie">
+        <div class="contenedorfooter">
+
+            <div class="contenido_footer">
+                <h1 class="titulo-footer"><span><img src="{% static 'src/Logo/Logo.png' %}" width="30"></span> Ravenclaw
+                </h1>
+                <p>Donde la sabiduría, la creatividad y el ingenio se unen para formar mentes extraordinarias. Únete a
+                    nuestra comunidad de pensadores.</p>
+            </div>
+
+            <div class="enlaces">
+                <h3>Enlaces</h3>
+                <a href="">Nosotros</a>
+                <a href="">Productos</a>
+                <a href="">Contactos</a>
+            </div>
+
+            <div class="logos">
+                <h3>Redes Sociales</h3>
+                <div class="iconos-redes">
+                    <img src="{% static 'src/Redes/Facebook.jpg' %}" alt="Facebook">
+                    <img src="{% static 'src/Redes/Instagram.jpg' %}" alt="Instagram">
+                    <img src="{% static 'src/Redes/Twitter.jpg' %}" alt="Twitter">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 Ravenclaw. Todos los derechos reservados.</p>
+            <div class="legales">
+                <span>Privacidad</span>
+                <span>Términos</span>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>
