@@ -42,6 +42,6 @@ def ModificarProductos(request,Codigo):
             data['Mensaje'] = "Producto Modificados Correctamente"
         else:
             data['Mensaje'] = "Error al Actualizar el Producto"
-    return render(request, 'Pages/NuevoProducto.html', data)
+    return render(request, 'Pages/ModificarProducto.html', data)
 
 

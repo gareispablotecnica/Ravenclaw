@@ -24,6 +24,8 @@
         {% else %}
         <p>Sin imagen disponible</p>
         {% endif %}
+
+        <a href="{% url 'Modificar' i.Codigo %}" class="btn btn-warning">Editar</a>
         
     </div>
     {% empty %}
