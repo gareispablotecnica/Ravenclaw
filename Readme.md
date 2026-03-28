@@ -23,6 +23,21 @@ Proyecto desarrollado con **Django** para la gestión de productos, permitiendo 
 - Usuario: pablo o gareis
 - Contraseña: 1234
 
+## Acceso a la Carpeta
+```shell
+    cd Project
+```
+## Listar Elementos
+```shell
+    ls
+```
+
+### Lista Correcta
+- Api
+- Media
+- Project
+- db.sqlite3
+- manage.py
 
 ## Acceso al Panel de Administración
 
