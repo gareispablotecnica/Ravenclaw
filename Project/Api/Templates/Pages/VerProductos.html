@@ -9,6 +9,14 @@
 
 {% block cuerpo %}
 
+<div class="buscar">
+    <form action="" method="get">
+        <label for="">Nombre:</label>
+        <input type="text" name="Filtrar" id="Filtrar">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+
 <div class="contenedor-productos">
     {% for i in ListarProductos %}
     <div class="card">
