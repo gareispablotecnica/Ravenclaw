@@ -1,13 +1,22 @@
 from django.shortcuts import render,get_object_or_404
 from .forms import *
 # Create your views here.
-
+from django.db.models import Q
 
 def Home(request):
-    return render(request, 'Base.html')
+    query=Producto.objects.all().order_by[-3]
+    data={
+        'formulario':query
+    }
+    return render(request, 'Base.html',data)
 
 def Productos(request):
     query=Producto.objects.all()
+    Filtro= request.GET.get('Filtrar')
+    if Filtro:
+        query= Producto.objects.filter(
+            Q(Nombre__icontains=Filtro)
+        ).distinct()
     data={
         'ListarProductos':query
     }
