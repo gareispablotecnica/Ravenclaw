@@ -4,7 +4,7 @@ from .forms import *
 from django.db.models import Q
 
 def Home(request):
-    query=Producto.objects.all().order_by[-3]
+    query=Producto.objects.all()
     data={
         'formulario':query
     }
