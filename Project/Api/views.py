@@ -2,6 +2,8 @@ from django.shortcuts import render,get_object_or_404
 from .forms import *
 # Create your views here.
 from django.db.models import Q
+# ---> No exijas la validación CSRF para esta vista (html)
+from django.views.decorators.csrf import csrf_exempt
 
 def Home(request):
     query=Producto.objects.all()
@@ -22,7 +24,8 @@ def Productos(request):
     }
     return render(request, 'Pages/VerProductos.html',data)
 
-
+# --> no necesita comprobar el token CSRF
+@csrf_exempt
 def NuevoProductos(request):
     data={
         'Formulario': FormularioProductos()
